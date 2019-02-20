@@ -4,24 +4,19 @@ public class Main{
     public static void main(String[] args) {
         Scanner input = new Scanner (System.in);
         int numFlowers = input.nextInt();
-        int startIndex = -1;
-        int endIndex = 0;
         int rowCount = 0;
         boolean matchFound = false;
         String[] stringNumberArray = new String[numFlowers*numFlowers];
         int[][] measurements = new int[numFlowers][numFlowers];
         for(int i = 0; i < stringNumberArray.length; i++) {
             stringNumberArray[i] = input.next();
-            //input.next();
         }
 
         for(int i = 0; i < numFlowers; i++) {
             for(int j = 0; j < numFlowers; j++) {
                 measurements[i][j] = Integer.parseInt(stringNumberArray[rowCount]);
                 rowCount++;
-                //System.out.print(measurements[i][j]);
             }
-            //System.out.println();
         }
 
         while(matchFound == false){
@@ -43,7 +38,6 @@ public class Main{
         for(int j = numFlowers-1; j >= 0; j--){
             for(int i = 0; i < numFlowers; i++) {
                 newMeasurements[rowCount][columnCount] = measurements[i][j];
-                //System.out.print(measurements[i][j]);
                 columnCount++;
             }
             rowCount++;
